@@ -1,0 +1,241 @@
+/* ------ Global styles ------ */
+body {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #46484a;
+}
+
+.content-1 {
+    background-color: #6ad8ce;
+}
+
+.content-2 {
+    background-color: #ffd18d;
+}
+
+h2 {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 2.8rem;
+    font-weight: 500;
+}
+
+/* ------ Override Bootstrap ------ */
+.btn-outline-secondary {
+    font-size: .75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: .3rem;
+    border-width: 0.15rem;
+}
+
+.btn-outline-secondary:hover {
+    color: #ffffff !important
+}
+
+.btn-outline-secondary, .btn-outline-secondary:visited {
+    color: #46484a;
+    border-color: #46484a;
+    background: none;
+}
+
+/* ------ Sections dividers ------ */
+section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    position: relative;
+}
+
+section::before,
+section::after {
+    position: absolute;
+    content: '';
+    pointer-events: none;
+}
+
+/* Diagonal */
+.quote {
+  position: relative;
+  z-index: 1;
+}
+.quote:before, .quote:after {
+  background: inherit;
+  content: '';
+  display: block;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.quote:before {
+  top: 0;
+  -webkit-transform: skewY(1.5deg);
+          transform: skewY(1.5deg);
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+}
+
+.quote:after {
+  bottom: 0;
+  -webkit-transform: skewY(-1.5deg);
+          transform: skewY(-1.5deg);
+  -webkit-transform-origin: 100%;
+          transform-origin: 100%;
+}
+
+/* Triangles */
+.ss-style-triangles::before,
+.ss-style-triangles::after {
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    -webkit-transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.ss-style-triangles::before {
+    top: -50px;
+    background: inherit;
+}
+
+.ss-style-triangles::after {
+    bottom: -50px;
+    z-index: 10;
+    background: inherit;
+}
+
+/* Half Circle */
+.ss-style-halfcircle::before,
+.ss-style-halfcircle::after {
+    left: 50%;
+    z-index: 10;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: inherit;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.ss-style-halfcircle::before {
+    top: -50px;
+}
+
+.ss-style-halfcircle::after {
+    bottom: -50px;
+}
+
+/* Big Triangle */
+svg#bigTriangleColor {
+    pointer-events: none;
+}
+
+#bigTriangleColor path {
+    fill: #3498db;
+    stroke: #3498db;
+    stroke-width: 2;
+}
+
+.pb-triangle {
+    padding-top: 8rem;
+}
+
+/* Curves */
+#curveUpColor {
+    position: absolute;
+    top: -100px;
+}
+
+#curveUpColor path,
+#curveDownColor path {
+    fill: #ffd18d;
+    stroke: #ffd18d;
+}
+
+.pb-curve {
+    padding-bottom: 11rem;
+}
+
+/* Multiple Triangles */
+.ss-style-multitriangles::before,
+.ss-style-multitriangles::after {
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    -webkit-transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.ss-style-multitriangles::before {
+    top: -25px;
+    background: inherit;
+    box-shadow: -50px 50px 0 #6ad8ce, 50px -50px 0 #6ad8ce;
+}
+
+.ss-style-multitriangles::after {
+    bottom: -25px;
+    z-index: 10;
+    background: inherit;
+    box-shadow: -50px 50px 0 #6ad8ce, 50px -50px 0 #6ad8ce;
+}
+
+/* Gradient background anim */
+.bg_anim {
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 15s ease infinite;
+    -moz-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+[data-aos="custom-anim1"] {
+  transform: rotate(180deg);
+  opacity: 0; 
+  transition-property: transform, opacity;
+}
+[data-aos="custom-anim1"].aos-animate {
+  transform: rotate(0);
+  opacity: 1;
+}
+
+
